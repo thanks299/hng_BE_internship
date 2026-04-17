@@ -1,0 +1,36 @@
+{
+  "name": "stage1-backend-api",
+  "version": "1.0.0",
+  "description": "Backend API for Stage 1 Task - Data Persistence & API Design",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --runInBand --forceExit",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
+    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --runInBand --forceExit"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.6",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "transform": {},
+    "testEnvironment": "node",
+    "testTimeout": 30000,
+    "verbose": true,
+    "forceExit": true,
+    "detectOpenHandles": true
+  }
+}
