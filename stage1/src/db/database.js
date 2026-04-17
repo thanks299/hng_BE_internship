@@ -1,20 +1,15 @@
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import pkg from 'pg';
+const { Pool } = pkg;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-let db;
+let pool;
 
 export async function initializeDatabase() {
-  db = await open({
-    filename: join(__dirname, '../../profiles.db'),
-    driver: sqlite3.Database
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
   });
 
-  await db.exec(`
+  await pool.query(`
     CREATE TABLE IF NOT EXISTS profiles (
       id TEXT PRIMARY KEY,
       name TEXT UNIQUE NOT NULL,
@@ -29,9 +24,9 @@ export async function initializeDatabase() {
     )
   `);
 
-  return db;
+  return pool;
 }
 
 export function getDb() {
-  return db;
+  return pool;
 }
