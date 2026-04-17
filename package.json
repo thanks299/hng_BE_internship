@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Backend API for Stage 1 Task - Data Persistence & API Design",
   "type": "module",
-  "main": "src/index.js",
+  "main": "api/index.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
