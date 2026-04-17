@@ -4,8 +4,8 @@ import { PORT } from './config.js';
 
 
 app.listen(PORT, () => {
-  console.log(`Gender Classifier API listening on port: https://localhost:${PORT}`);
-  console.log(`📍 Local: https://localhost:${PORT}`);
-  console.log(`🔍 Health check: https://localhost:${PORT}/health`);
-  console.log(`🎯 API endpoint: https://localhost:${PORT}/api/classify?name={name}`);
+  console.log(`Gender Classifier API listening on port: http://localhost:${PORT}`);
+  console.log(`📍 Local: http://localhost:${PORT}`);
+  console.log(`🔍 Health check: http://localhost:${PORT}/health`);
+  console.log(`🎯 API endpoint: http://localhost:${PORT}/api/classify?name={name}`);
 });

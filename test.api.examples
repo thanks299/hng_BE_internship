@@ -1,0 +1,14 @@
+# Test your deployed API
+curl "https://gender-classifier-api.vercel.app/api/classify?name=Alex"
+
+# Test health endpoint
+curl "https://gender-classifier-api.vercel.app/health"
+
+# Test with different names
+curl "https://gender-classifier-api.vercel.app/api/classify?name=Emma"
+
+# Test error handling
+curl "https://gender-classifier-api.vercel.app/api/classify?name="
+
+# Verify CORS headers
+curl -I "https://gender-classifier-api.vercel.app/api/classify?name=Alex"
