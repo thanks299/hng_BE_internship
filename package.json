@@ -2,24 +2,17 @@
   "name": "gender-classifier-api",
   "version": "1.0.0",
   "type": "module",
-  "description": "Gender classifier API using Genderize.io",
   "main": "api/index.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node --watch src/server.js",
-    "test": "jest"
+    "dev": "node --watch src/server.js"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "axios": "^1.6.0",
-    "dotenv": "^16.3.0",
-    "express": "^4.18.0"
-  },
-  "devDependencies": {
-    "jest": "^29.0.0",
-    "supertest": "^6.3.0",
-    "axios-mock-adapter": "^1.22.0"
+    "dotenv": "^16.3.1"
   },
   "engines": {
-    "node": ">=18.x"
+    "node": "18.x"
   }
 }
